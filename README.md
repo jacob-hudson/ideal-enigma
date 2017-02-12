@@ -1,2 +1,2 @@
 # ideal-enigma
-A lab space for the book Systems Performance:  Enterprise and the Cloud
+A lab space for the Google SRE Book
