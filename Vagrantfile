@@ -65,6 +65,10 @@ $boxes.each_with_index do |box, index|
         v.customize ["modifyvm", :id, "--natdnsproxy2", "on"]
         v.customize ["modifyvm", :id, "--natdnshostresolver2", "on"]
       end
+
+      box[:forwarded_ports].each do |guest_port, host_port|
+        node.vm.network "forwarded_port", guest: guest_port, host: host_port, auto_correct: true
+      end if box[:forwarded_ports]
     end
   end
 end
